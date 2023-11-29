@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    // this for directed graph and sample is given below
+    // this for directed graph and sample is given below, taking 0 as the source node
     ll n, edges;
     cin >> n >> edges;
 
@@ -18,7 +18,7 @@ int main()
         adj_lst[x].push_back({y, w});
     }
 
-    priority_queue<pair<ll, ll> > pq;
+    priority_queue<pair<ll, ll>, vector<pair<ll, ll>>, greater<pair<ll, ll>> > pq;
     pq.push({0, 0});
     ll path_weight[n] = {}, visited[n] = {};
 
